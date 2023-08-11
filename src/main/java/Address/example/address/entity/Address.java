@@ -1,26 +1,19 @@
 package Address.example.address.entity;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "address")
+@Document(collection = "address")
 public class Address {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
 
-    @Column(name = "lane1")
     private String lane1;
 
-    @Column(name = "lane2")
     private String lane2;
 
-    @Column(name = "zip")
     private String zip;
 
-    @Column(name = "state")
     private String state;
 
     public int getId() {
